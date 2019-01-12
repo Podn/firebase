@@ -1,0 +1,55 @@
+<mat-sidenav-container >
+  <mat-sidenav #sidenav mode="over" [(opened)]="navOpen" class="show-on-mobile main-sidenav">
+    <a routerLink="/" (click)="sidenav.close()"><div class="sidenav-item">Home</div></a>
+    <a routerLink="/business" (click)="sidenav.close()"><div class="sidenav-item">For Businesses</div></a>
+    <a routerLink="/editor" (click)="sidenav.close()"><div class="sidenav-item">For Podcast Editors</div></a>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="navigation-header">
+      <div class="show-on-mobile inline">
+          <button mat-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+        <div>Peak Podcasting</div>
+      </div>
+      <div class="banner-bar hide-on-mobile">
+        <div>Peak Podcasting</div>
+        <div>
+          <a routerLink="/"><button mat-button>Home</button></a>
+          <a routerLink="/business"><button mat-button>For Businesses</button></a>
+          <a routerLink="/editor"><button mat-button>For Podcast Editors</button></a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-section">
+        <h1>{{heroText}}</h1>
+        <h2>{{heroSecondary}}</h2>
+        <button mat-raised-button>{{cta(0)}}</button>
+    </div>
+    <div class="value-prop-section">
+        <h2>{{valuePropTitle}}</h2>
+        <div class="horizontal-divider"></div>
+        <div class="value-prop-section-container">            
+            <div class="icon-container">
+                <mat-icon class="side-panel-icon">{{valuePropIcon}}</mat-icon>
+            </div>
+            <div class="text-container">
+                <div *ngFor="let prop of valueProps" class="value-prop-line-item">
+                    <mat-icon>check_circle_outline</mat-icon>
+                    <div><h3>{{prop.title}}</h3><div>{{prop.description}}</div></div>
+                </div>
+                <button mat-raised-button>{{cta(1)}}</button>
+            </div>
+        </div>
+    </div>
+    <div class="cta-section">
+        <div *ngIf="isBusiness">
+            <how-it-works></how-it-works>
+        </div>
+        <div *ngIf="!isBusiness">
+            <h1>The easiest way to become a full time podcast editor</h1>
+        </div>
+
+        <button mat-raised-button>{{cta(2)}}</button>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
