@@ -11,7 +11,7 @@ export const environment = {
     projectId: "peakpodcasting",
     storageBucket: "peakpodcasting.appspot.com",
     messagingSenderId: "653244052966"
-  }
+  },
 };
 
 /*
