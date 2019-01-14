@@ -23,7 +23,7 @@
     <div class="hero-section">
         <h1>{{heroText}}</h1>
         <h2>{{heroSecondary}}</h2>
-        <button mat-raised-button>{{cta(0)}}</button>
+        <button mat-raised-button (click)="openWaitlistDialog()">{{cta(0)}}</button>
     </div>
     <div class="value-prop-section">
         <h2>{{valuePropTitle}}</h2>
@@ -37,7 +37,7 @@
                     <mat-icon>check_circle_outline</mat-icon>
                     <div><h3>{{prop.title}}</h3><div>{{prop.description}}</div></div>
                 </div>
-                <button mat-raised-button>{{cta(1)}}</button>
+                <button mat-raised-button (click)="openWaitlistDialog()">{{cta(1)}}</button>
             </div>
         </div>
     </div>
@@ -49,7 +49,7 @@
             <h1>The easiest way to become a full time podcast editor</h1>
         </div>
 
-        <button mat-raised-button>{{cta(2)}}</button>
+        <button mat-raised-button (click)="openWaitlistDialog()">{{cta(2)}}</button>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

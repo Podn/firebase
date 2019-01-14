@@ -209,3 +209,30 @@ h2 {
     }
 
 }
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.waitlist-form {
+    text-align: center;
+
+    .services-block {
+        text-align: left;
+        ::ng-deep .mat-checkbox-checked .mat-checkbox-background {
+            background-color: darkcyan !important;
+        }
+
+        .tappable {
+            padding: 6px 0;
+        }
+    }
+
+    .splash-check {
+        font-size: 300px;
+        color: green;
+        width: 300px;
+        height: 300px;
+    }
+}

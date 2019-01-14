@@ -1,5 +1,8 @@
 import { Component, HostListener, ViewChild, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import {MatDialog, MatDialogRef} from '@angular/material';
+
+import { WaitlistFormComponent } from './waitlist-form.component'
 
 @Component({
   selector: 'homescreen',
@@ -10,7 +13,7 @@ export class HomescreenComponent {
     navOpen: boolean = false;
     isMobile = false;
 
-    constructor(private route: ActivatedRoute) {}
+    constructor(public dialog: MatDialog, private route: ActivatedRoute) {}
 
     get pageCategory() {
         const cat = (this.route.snapshot.paramMap.get('category') || '').toLowerCase();
@@ -62,6 +65,19 @@ export class HomescreenComponent {
                   {'title': 'Browse client requests', 'description': "We aggregate editing jobs for you and make interfacing with clients simple."},
                   {'title': 'Get paid fairly for your work', 'description': "We can offer consistent work that pays well."},
               ];
+      }
+
+      openWaitlistDialog() {
+        const data = {};
+        data['user_type'] = this.isBusiness ? 'business' : 'editor';
+        data['title'] = this.isBusiness ? 'Be the voice of your industry' :
+                                          'Get consistent work that pays well';
+        data['completion'] = this.isBusiness ? "You're all set! We'll reach out shortly to help you with your podcast!" :
+                                               "You're all set! We'll reach out shortly about editing with Peak Podcasting!"
+        const dialogRef = this.dialog.open(WaitlistFormComponent, {
+          width: '80%',
+          data,
+        });
       }
 
      cta(index) {
