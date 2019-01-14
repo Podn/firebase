@@ -1,4 +1,4 @@
-<div class="waitlist-form">
+<mat-dialog-content class="waitlist-form">
     <div *ngIf="!showSplash">
         <h2>{{data.title}}</h2>
         <div *ngIf="data.user_type=='business'" class="flex-column">
@@ -47,6 +47,4 @@
         <h2>{{data.completion}}</h2>
         <mat-icon class="splash-check">check</mat-icon>
     </div>
-</div>
-
-
+</mat-dialog-content>

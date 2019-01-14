@@ -160,7 +160,7 @@ h2 {
         flex-direction: column;
         justify-content: center;
         min-width: 260px;
-        min-height: 305px;
+        min-height: 230px;
         @media screen and (max-width: 720px) {
             min-width: 400px;
         }
@@ -248,5 +248,8 @@ h2 {
         .mat-checkbox {
              margin-right: 8px;
         }
+    }
+    @media screen and (max-width: 719px) {
+        padding-bottom: 24px;
     }
 }
