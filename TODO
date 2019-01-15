@@ -1,5 +1,7 @@
-- Add Google Analytics
 - Better fonts / favicon
 - Update logo
 - Use images instead of icons on home page
 - Add footer (requires about / FAQ / etc.)
+- Inline validation for form fields
+- Set-up development google analytics
+- Set-up development firebase config
