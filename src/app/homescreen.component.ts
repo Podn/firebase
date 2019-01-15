@@ -1,8 +1,11 @@
 import { Component, HostListener, ViewChild, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {MatDialog, MatDialogRef} from '@angular/material';
+import { MatDialog, MatDialogRef } from '@angular/material';
 
 import { WaitlistFormComponent } from './waitlist-form.component'
+
+declare let ga: Function;
+
 
 @Component({
   selector: 'homescreen',
@@ -13,7 +16,19 @@ export class HomescreenComponent {
     navOpen: boolean = false;
     isMobile = false;
 
-    constructor(public dialog: MatDialog, private route: ActivatedRoute) {}
+    constructor(public dialog: MatDialog, private route: ActivatedRoute) {
+      let firstPageLogged = false;
+      route.url.subscribe(segment => {
+        if (!firstPageLogged) {
+          firstPageLogged = true;
+          return;
+        }
+        if (segment.length === 1) {
+           ga('set', 'page', '/' + segment[0].path);
+           ga('send', 'pageview');
+        }
+      });
+    }
 
     get pageCategory() {
         const cat = (this.route.snapshot.paramMap.get('category') || '').toLowerCase();
