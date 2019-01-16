@@ -17,6 +17,7 @@ export class HomescreenComponent {
 
     constructor(public dialog: MatDialog, private route: ActivatedRoute) {
       let firstPageLogged = false;
+      this.setIsMobile();
       route.url.subscribe(segment => {
         if (!firstPageLogged) {
           firstPageLogged = true;
@@ -29,6 +30,10 @@ export class HomescreenComponent {
       });
     }
 
+    setIsMobile() {
+      this.isMobile = window.innerWidth < 720;
+    }
+
     get pageCategory() {
         const cat = (this.route.snapshot.paramMap.get('category') || '').toLowerCase();
         if (!cat || (cat != 'business' && cat != 'editor')) {
@@ -39,7 +44,7 @@ export class HomescreenComponent {
 
      @HostListener('window:resize', ['$event'])
       onResize(event) {
-          this.isMobile = window.innerWidth < 720;
+          this.setIsMobile();
       }
 
       get isBusiness(): boolean {
@@ -93,11 +98,20 @@ export class HomescreenComponent {
                                           'Get consistent work that pays well';
         data['completion'] = this.isBusiness ? "You're all set! We'll reach out shortly to help you with your podcast!" :
                                                "You're all set! We'll reach out shortly about editing with Peak Podcasting!"
-        const dialogRef = this.dialog.open(WaitlistFormComponent, {
-          width: '80%',
-          maxWidth: '800px',
-          data,
-        });
+        if (!this.isMobile) {
+          this.dialog.open(WaitlistFormComponent, {
+            width: '80%',
+            maxWidth: '800px',
+            data,
+          });
+        } else {
+          this.dialog.open(WaitlistFormComponent, {
+            width: '100%',
+            height: '80%',
+            maxWidth: '100%',
+            data,
+          });
+        }
       }
 
      cta(index) {
