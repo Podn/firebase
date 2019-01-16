@@ -125,6 +125,22 @@ h2 {
                     margin: -25px 0 -50px 0;
                 }
             }
+
+            .side-icons {    
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 200px;
+
+                i {
+                    height: 40px;
+                    width: 40px;
+                    font-size: 40px;
+                    color: #B4E2E7;
+                    text-align: center;
+                    text-shadow: -1px -1px rgba(0, 0, 0, 0.54);
+                }
+            }
         }
 
         .text-container {

@@ -6,7 +6,6 @@ import { WaitlistFormComponent } from './waitlist-form.component'
 
 declare let ga: Function;
 
-
 @Component({
   selector: 'homescreen',
   templateUrl: './homescreen.component.html',
@@ -63,8 +62,13 @@ export class HomescreenComponent {
           return this.isBusiness ? 'Podcast creation, simplified' : 'Do what you love and get paid for it.';
       }
 
+
       get valuePropIcon() {
-          return this.isBusiness ? 'mic' : 'play_arrow';
+          return this.isBusiness ? {type: 'mi', name: 'mic'} : {type: 'fa', name: 'podcast'};
+      }
+
+      get valuePropSideIcons() {
+        return this.isBusiness  ? ['podcast', 'file-audio', 'cut'] : ['cut', 'file-audio', 'headphones'];
       }
 
       get valueProps() {

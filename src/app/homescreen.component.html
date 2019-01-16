@@ -30,7 +30,11 @@
         <div class="horizontal-divider"></div>
         <div class="value-prop-section-container">            
             <div class="icon-container">
-                <mat-icon class="side-panel-icon">{{valuePropIcon}}</mat-icon>
+                <i *ngIf="valuePropIcon.type === 'fa'" class="side-panel-icon fas fa-{{valuePropIcon.name}}"></i>
+                <mat-icon *ngIf="valuePropIcon.type === 'mi'" class="side-panel-icon">{{valuePropIcon.name}}</mat-icon>
+                <div class="side-icons">
+                    <i *ngFor="let icon of valuePropSideIcons" class="fas fa-{{icon}}"></i>
+                </div>
             </div>
             <div class="text-container">
                 <div *ngFor="let prop of valueProps" class="value-prop-line-item">
