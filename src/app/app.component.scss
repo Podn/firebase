@@ -1,3 +1,11 @@
+@import '~@angular/material/theming';
+
+
+.font {
+    font-family: 'Roboto', 'sans-serif';
+}
+
+
 .mat-drawer-container,
 .mat-drawer {
     background: #fff;
@@ -76,11 +84,13 @@ h2 {
 
     h2 {
         color: #fff;
+        text-align: center;
     }
 
     .horizontal-divider{
         border-bottom: 1px rgba(255,255,255, 0.8) solid;
         margin: auto;
+        margin-bottom: 18px;
         width: 100px;
     }
 

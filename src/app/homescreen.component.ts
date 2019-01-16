@@ -59,7 +59,7 @@ export class HomescreenComponent {
       }
 
       get valuePropTitle() {
-          return this.isBusiness ? 'Podcast creation, simplified' : 'Do what you love and get paid for it.';
+          return this.isBusiness ? 'Podcast creation, simplified' : 'Do what you love and get paid for it';
       }
 
 

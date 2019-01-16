@@ -1,4 +1,4 @@
-<mat-sidenav-container >
+<mat-sidenav-container class="font">
   <mat-sidenav #sidenav mode="over" [(opened)]="navOpen" class="show-on-mobile main-sidenav">
     <a routerLink="/" (click)="sidenav.close()"><div class="sidenav-item">Home</div></a>
     <a routerLink="/business" (click)="sidenav.close()"><div class="sidenav-item">For Businesses</div></a>
@@ -21,12 +21,12 @@
       </div>
     </div>
     <div class="hero-section">
-        <h1>{{heroText}}</h1>
-        <h2>{{heroSecondary}}</h2>
+        <h1 class="headline">{{heroText}}</h1>
+        <h2 class="title">{{heroSecondary}}</h2>
         <button mat-raised-button (click)="openWaitlistDialog()">{{cta(0)}}</button>
     </div>
     <div class="value-prop-section">
-        <h2>{{valuePropTitle}}</h2>
+        <h2 class="title">{{valuePropTitle}}</h2>
         <div class="horizontal-divider"></div>
         <div class="value-prop-section-container">            
             <div class="icon-container">
