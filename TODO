@@ -5,3 +5,10 @@
 - Inline validation for form fields
 - Set-up development google analytics
 - Set-up development firebase config
+
+
+- no mobile side scroll
+- Mobile form not pop-up
+- Fix services section
+- Max width on modal for desktop
+- Fix for very wide screens

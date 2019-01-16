@@ -95,6 +95,7 @@ export class HomescreenComponent {
                                                "You're all set! We'll reach out shortly about editing with Peak Podcasting!"
         const dialogRef = this.dialog.open(WaitlistFormComponent, {
           width: '80%',
+          maxWidth: '800px',
           data,
         });
       }

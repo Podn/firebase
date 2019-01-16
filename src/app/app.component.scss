@@ -2,7 +2,7 @@
 
 
 .font {
-    font-family: 'Roboto', 'sans-serif';
+    font-family: 'helvetica neue';
 }
 
 
@@ -41,8 +41,15 @@ h2 {
     align-items: center;
     height: 48px;
     display: flex;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+    left: 0;
+
+
     @media screen and (min-width: 720px) {
-        padding: 0 24px;
+        padding: 6px 24px;
     }
 
     button.mat-button {
@@ -54,6 +61,7 @@ h2 {
         justify-content: space-between;
         align-items: center;
         width: 100%;
+        margin-right: 24px;
     }
 }
 
@@ -107,7 +115,8 @@ h2 {
 
         .text-container {
             @media screen and (min-width: 720px) {
-                width: calc(100% - 400px)
+                width: calc(100% - 400px);
+                max-width: 600px;
             }
         }
 
@@ -242,6 +251,7 @@ h2 {
 }
 
 .waitlist-form {
+    padding-bottom: 24px;
     text-align: center;
 
     .services-block {
@@ -274,8 +284,5 @@ h2 {
         .mat-checkbox {
              margin-right: 8px;
         }
-    }
-    @media screen and (max-width: 719px) {
-        padding-bottom: 24px;
     }
 }
