@@ -53,13 +53,13 @@ export class HomescreenComponent {
 
       get heroText() {
           return this.isBusiness ?
-          'The easiest way to edit and distribute your podcast' :
-          'Get consistent work that pays well'
+          'The easiest way to create a podcast for your business' :
+          'Focus on editing and join a community of audio editors'
       }
 
       get heroSecondary() {
           return this.isBusiness ?
-          'Focus on your content' :
+          'Never worry about editing or distributing your podcast again' :
           'Focus on editing and join a community of audio editors'
       }
 
@@ -80,14 +80,14 @@ export class HomescreenComponent {
           return this.isBusiness ?
               [
                   {'title': 'Give us your audio files', 'description': 'Upload your raw audio and tell us what you need.'},
-                  {'title': 'We do the heavy lifting', 'description': "We’ll take care of audio mastering, removal of all the 'ahs' and 'ums’,  audio quality enhancement, stitching intros and outros and more."},
+                  {'title': 'We make your podcast sound great', 'description': "We’ll take care of audio mastering, removal of all the 'ahs' and 'ums’,  audio quality enhancement, stitching intros and outros and more."},
                   {'title': 'We distribute the finished podcast', 'description': "Approve the final version, then we'll automatically host, publish and distribute your podcast."},
               ]
               :
               [
-                  {'title': 'Apply to be a peak podcasting editor', 'description': 'We’ll review your portfolio. If you’re a match, you’ll get access to our jobs.'},
+                  {'title': 'Apply to be an editor', 'description': 'We’ll review your portfolio. If you’re a match, you’ll get access to our jobs.'},
                   {'title': 'Browse client requests', 'description': "We aggregate editing jobs for you and make interfacing with clients simple."},
-                  {'title': 'Get paid fairly for your work', 'description': "We can offer consistent work that pays well."},
+                  {'title': 'Get paid fairly for your work', 'description': "We pay you what you're worth."},
               ];
       }
 
@@ -116,7 +116,7 @@ export class HomescreenComponent {
 
      cta(index) {
           return this.isBusiness     ?
-          ['Create Your Podcast', 'Get Going', 'Get Started'][index] :
-          ['Start Editing', 'Get Going', 'Join Now'][index]
+          ['Join the waitlist', 'Learn more', 'Get Started'][index] :
+          ['Start Editing',  'Learn more','Join Now'][index]
       }
 };
