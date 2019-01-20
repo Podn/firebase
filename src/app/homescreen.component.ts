@@ -2,7 +2,7 @@ import { Component, HostListener, ViewChild, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog, MatDialogRef } from '@angular/material';
 
-import { WaitlistFormComponent } from './waitlist-form.component'
+import { WaitlistFormDialogComponent } from './waitlist-form-dialog.component'
 
 declare let ga: Function;
 
@@ -19,7 +19,8 @@ export class HomescreenComponent {
 
     constructor(
       private router: Router,
-      private route: ActivatedRoute) {
+      private route: ActivatedRoute,
+      public dialog: MatDialog) {
       this.setIsMobile();
       this.route.url.subscribe(segment => {
         scroll(0,0);
@@ -93,7 +94,15 @@ export class HomescreenComponent {
 
 
       openWaitlistDialog() {
-        this.router.navigate([`/${this.isBusiness ? 'business' : 'editor'}/${this.isBusiness ? 'waitlist' : 'apply'}`]);
+        if (this.isMobile) {
+          this.router.navigate([`/${this.isBusiness ? 'business' : 'editor'}/${this.isBusiness ? 'waitlist' : 'apply'}`]);
+        } else {
+          this.dialog.open(WaitlistFormDialogComponent, {
+            width: '80%',
+            maxWidth: '500px',
+            data: { isBusiness: this.isBusiness }
+          });
+        }
       }
 
      cta(index) {

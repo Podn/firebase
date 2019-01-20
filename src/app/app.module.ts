@@ -20,6 +20,7 @@ import { AppComponent } from './app.component';
 import { HomescreenComponent } from './homescreen.component';
 import { HowItWorksComponent } from './how-it-works.component';
 import { WaitlistFormComponent } from './waitlist-form.component';
+import { WaitlistFormDialogComponent } from './waitlist-form-dialog.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { WaitlistFormComponent } from './waitlist-form.component';
     HomescreenComponent,
     HowItWorksComponent,
     WaitlistFormComponent,
+    WaitlistFormDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +48,6 @@ import { WaitlistFormComponent } from './waitlist-form.component';
   ],
   providers: [],
   bootstrap: [AppComponent], 
-  entryComponents: [WaitlistFormComponent],
+  entryComponents: [WaitlistFormDialogComponent],
 })
 export class AppModule { }
