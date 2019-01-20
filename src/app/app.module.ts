@@ -15,6 +15,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { environment } from '../environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
+import { AboutComponent } from './about.component'
 import { AppComponent } from './app.component';
 import { HomescreenComponent } from './homescreen.component';
 import { HowItWorksComponent } from './how-it-works.component';
@@ -23,6 +24,7 @@ import { WaitlistFormComponent } from './waitlist-form.component';
 @NgModule({
   declarations: [
     AppComponent,
+    AboutComponent,
     HomescreenComponent,
     HowItWorksComponent,
     WaitlistFormComponent,

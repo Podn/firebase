@@ -1,7 +1,5 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-
-import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'waitlist-form',
@@ -9,35 +7,36 @@ import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
   styleUrls: ['./app.component.scss']
 })
 export class WaitlistFormComponent {
+    @Input() isBusiness: boolean = true;
+
     email: string = '';
     name: string = '';
     project: string = '';
-    podcastTitle: string = '';
+    company: string = '';
     editingType: string = '';
     previousWorkLink: string = '';
-    setup: boolean = false;
-    editing: boolean = false;
-    distribution: boolean = false;
 
     showSplash: boolean = false;
 
-    constructor(
-        public dialogRef: MatDialogRef<WaitlistFormComponent>,
-        @Inject(MAT_DIALOG_DATA) public data,
-        private db:AngularFirestore) {}
+    constructor(private db:AngularFirestore) {}
+
+    get title() {
+        return this.isBusiness ? 'Get Started' :
+                                 'Get consistent work that pays well';
+    }
+
+    get completion() {
+        return this.isBusiness ? "You're all set! We'll reach out shortly to help you with your podcast!" :
+                                 "You're all set! We'll reach out shortly about editing with Peak Podcasting!";
+    }
 
     get postData() {
-        if (this.data.user_type === 'business') {
-            const services = [this.setup ? 'setup' : '',
-                              this.editing ? 'editing' : '',
-                              this.distribution ? 'distribution' : ''].filter(x => !!x).join(',');
+        if (this.isBusiness) {
             return {
                 'email': this.email,
                 'name:': this.name,
-                'project': this.project,
-                'services': services,
-                'podcastTitle': this.podcastTitle,
-                'user_type': this.data.user_type,
+                'company': this.company,
+                'user_type': 'business',
             };
         }
         return {
@@ -46,13 +45,12 @@ export class WaitlistFormComponent {
                 'editingType': this.editingType,
                 'project': this.project,
                 'previousWorkLink': this.previousWorkLink,
-                'user_type': this.data.user_type,
+                'user_type': 'editor',
             };
     }
 
   submit(): void {
     this.db.collection('WaitList').add(this.postData);
     this.showSplash = true;
-    setTimeout(() => {this.dialogRef.close()}, 3000);
   }
 };

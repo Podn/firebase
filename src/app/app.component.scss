@@ -1,5 +1,15 @@
 @import '~@angular/material/theming';
 
+.cta-button {
+    background: #62B7ED;
+    color: #FFF;
+    min-height: 40px;
+}
+
+.gray-background {
+    background: #F6F8F9;
+}
+
 .mat-drawer-container,
 .mat-drawer {
     background: #fff;
@@ -65,7 +75,7 @@ h2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0 24px;
+    padding: 72px 24px 24px;
     text-align: center;
 
     @media screen and (max-width: 719px) {
@@ -93,10 +103,14 @@ h2 {
         text-align: center;
     }
 
+    .title {
+        font-size: 32px;
+        margin: 28px;
+    }
+
     .horizontal-divider{
         border-bottom: 1px rgba(255,255,255, 0.8) solid;
         margin: auto;
-        margin-bottom: 18px;
         width: 100px;
     }
 
@@ -104,81 +118,60 @@ h2 {
         display: flex;
         align-items: center;             
         justify-content: space-between;
-        margin-top: 8px;
+        flex-direction: column;
         width: 100%;
 
         @media screen and (max-width: 720px) {
             flex-wrap: wrap;
-            justify-content: center;                  
+            justify-content: center;
+            margin: 18px 48px;                 
         }
-
-        .text-container {
-            @media screen and (min-width: 720px) {
-                width: calc(100% - 400px);
-                max-width: 600px;
-            }
-        }
-
-        .icon-container,
-        .text-container {
-            color: #FFF;
-            margin: 18px 12px;
-            @media screen and (max-width: 719px) {
-                margin: 18px 48px;
-            }
-        }
-
 
         .icon-container {
+            width: 130px;
+            display: flex;
+            justify-content: center;
+            margin-right: 12px;
+        }
+
+        i {
+            color: rgba(255,255,255,0.8);
+            font-size: 75px;
+        }
+
+        .value-prop-line-item {
             display: flex;
             align-items: center;
 
-            .side-panel-icon {
-                font-size: 300px;
-                color: #B4E2E7;
-                text-shadow: -1px -1px rgba(0, 0, 0, 0.54);
-                height: 300px;
-                width: 300px;
-                @media screen and (max-width: 719px) {
-                    margin: -25px 0 -50px 0;
-                }
+            @media screen and (min-width: 719px) {
+                height: 125px;
             }
 
-            .side-icons {    
-                display: flex;
+            @media screen and (max-width: 720px) {
                 flex-direction: column;
-                justify-content: space-between;
-                height: 200px;
+                margin: 12px;
+                text-align: center;
+            }
 
-                i {
-                    height: 40px;
-                    width: 40px;
-                    font-size: 40px;
-                    color: #B4E2E7;
-                    text-align: center;
-                    text-shadow: -1px -1px rgba(0, 0, 0, 0.54);
+            h3 {
+                font-size: 24px;
+                margin: 6px 0;
+            }
+
+            .value-prop-text {
+                @media screen and (min-width: 719px) {
+                    width: 500px;
                 }
+                line-height: 1.3em;
+                letter-spacing: 1px;
             }
         }
 
-        .text-container {
-            .value-prop-line-item {
-                display: flex;
-                mat-icon {
-                    margin-top: 18px;
-                    margin-right: 12px;
-                }
-            }
-
-            button {
-                margin: 24px;
-            }
-        }
     }
 }
 
 .cta-section {
-    padding: 48px 0;
+    padding: 48px 32px;
     text-align: center;
 }
 
@@ -187,6 +180,18 @@ h2 {
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 24px;
+
+    .teal {
+        color: #71DBC3;
+    }
+
+    .blue {
+        color: #4A90E2;
+    }
+
+    .gray {
+        color: #9B9B9B;
+    }
 
     .how-it-works-col {
         align-items: center;
@@ -213,6 +218,28 @@ h2 {
 
     .how-it-works-col-title {
         text-align: center;
+        @media screen and (max-width: 720px) {
+            display: flex;
+            align-items: center;
+            margin-left: 36px;
+        }
+
+        h2 {
+            font-size: 22px;
+            text-decoration: underline;
+            order: 2;
+            @media screen and (max-width: 720px) {
+                width: 225px;
+                text-align: left;
+            }
+        }
+
+        i {
+            order: 1;
+            @media screen and (max-width: 720px) {
+                margin-right: 24px;
+            }
+        }
     }
 
     i {
@@ -227,7 +254,9 @@ h2 {
     }
 
     li {
-        margin-bottom: 8px;
+        margin-bottom: 16px;
+        font-size: 18px;
+        font-weight: 200;
     }
 }
 
@@ -240,8 +269,10 @@ h2 {
         border-bottom: 1px solid rgba(0,0,0,0.87);
         padding: 24px;
         width: 100%;
+        color: rgba(0,0,0,0.87);
+        font-size: 18px;
+        font-weight: 400;
     }
-
 }
 
 .flex-column {
@@ -250,8 +281,13 @@ h2 {
 }
 
 .waitlist-form {
-    padding-bottom: 24px;
+    padding: 72px 24px;
     text-align: center;
+
+    .form {
+        max-width: 500px;
+        margin: auto;
+    }
 
     .services-block {
         text-align: left;

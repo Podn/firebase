@@ -1,7 +1,7 @@
-<mat-dialog-content class="waitlist-form">
-    <div *ngIf="!showSplash">
-        <h2>{{data.title}}</h2>
-        <div *ngIf="data.user_type=='business'" class="flex-column">
+<div class="waitlist-form">
+    <div *ngIf="!showSplash" class="form">
+        <h2>{{title}}</h2>
+        <div *ngIf="isBusiness" class="flex-column">
             <mat-form-field>
                 <input matInput placeholder="Full Name" [(ngModel)]="name">
             </mat-form-field>
@@ -9,22 +9,11 @@
                 <input matInput placeholder="Email Address" [(ngModel)]="email">
             </mat-form-field>
 
-            <div class="services-block">
-                <h3>Services Required</h3>
-                <div class="tappable"><mat-checkbox [(ngModel)]="setup">Podcast Setup</mat-checkbox>
-                * Hosting / Website / Art</div>
-                <div class="tappable"><mat-checkbox [(ngModel)]="editing">Audio Editing</mat-checkbox>* Volume balancing / Content removal and ordering</div>
-                <div class="tappable"><mat-checkbox [(ngModel)]="distribution">Podcast Distribution</mat-checkbox>* Hosting / Statistics / Show Notes</div>
-            </div>
-
             <mat-form-field>
-                <textarea matInput placeholder="Tell us a bit about the project you're working on" [(ngModel)]="project"></textarea>
-            </mat-form-field>
-            <mat-form-field>
-                <input matInput placeholder="Exisiting podcast title (optional)" [(ngModel)]="podcastTitle">
+                <input matInput placeholder="Company Name" [(ngModel)]="company">
             </mat-form-field>
         </div>
-        <div *ngIf="data.user_type=='editor'" class="flex-column">
+        <div *ngIf="!isBusiness" class="flex-column">
             <mat-form-field>
                 <input matInput placeholder="Full Name" [(ngModel)]="name">
             </mat-form-field>
@@ -41,10 +30,10 @@
                 <input matInput placeholder="Please provide a link to a previous project you have worked on" [(ngModel)]="previousWorkLink">
             </mat-form-field>
         </div>
-        <button mat-raised-button (click)="submit()">Submit</button>
+        <button mat-raised-button class="cta-button" (click)="submit()">Submit</button>
     </div>
     <div *ngIf="showSplash">
-        <h2>{{data.completion}}</h2>
+        <h2>{{completion}}</h2>
         <mat-icon class="splash-check">check</mat-icon>
     </div>
-</mat-dialog-content>
+</div>   
