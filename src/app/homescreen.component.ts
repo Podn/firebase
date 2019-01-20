@@ -64,7 +64,7 @@ export class HomescreenComponent {
       get heroText() {
           return this.isBusiness ?
           'The easiest way to create a podcast for your business' :
-          'Get consistent work that pays well'
+          'Focus on editing and join a community of audio editors'
       }
 
       get heroSecondary() {
@@ -81,16 +81,17 @@ export class HomescreenComponent {
           return this.isBusiness ?
               [
                   {'title': 'Give us your audio files', 'description': 'Upload your raw audio and tell us what you need.', icon: 'upload'},
-                  {'title': 'We do the heavy lifting', 'description': "We’ll take care of audio mastering, removal of all the 'ahs' and 'ums’,  audio quality enhancement, stitching intros and outros and more.", icon: 'headphones'},
+                  {'title': 'We make your podcast sound great', 'description': "We’ll take care of audio mastering, removal of all the 'ahs' and 'ums’,  audio quality enhancement, stitching intros and outros and more.", icon: 'headphones'},
                   {'title': 'We distribute the finished podcast', 'description': "Approve the final version, then we'll automatically host, publish and distribute your podcast.", icon: 'broadcast-tower'},
               ]
               :
               [
-                  {'title': 'Apply to be a peak podcasting editor', 'description': 'We’ll review your portfolio. If you’re a match, you’ll get access to our jobs.', icon: 'cut'},
+                  {'title': 'Apply to be an editor', 'description': 'We’ll review your portfolio. If you’re a match, you’ll get access to our jobs.', icon: 'cut'},
                   {'title': 'Browse client requests', 'description': "We aggregate editing jobs for you and make interfacing with clients simple.", icon: 'file-audio'},
-                  {'title': 'Get paid fairly for your work', 'description': "We can offer consistent work that pays well.", icon: 'headphones'},
-              ];
-      }
+                  {'title': 'Get paid fairly for your work', 'description': "We pay you what you're worth.", icon: 'headphones'},
+               ]
+       }
+
 
       openWaitlistDialog() {
         this.router.navigate([`/${this.isBusiness ? 'business' : 'editor'}/${this.isBusiness ? 'waitlist' : 'apply'}`]);
@@ -98,7 +99,7 @@ export class HomescreenComponent {
 
      cta(index) {
           return this.isBusiness     ?
-          ['Join the Waitlist', 'Get Started', 'Join the Waitlist'][index] :
-          ['Start Editing', 'Get Going', 'Join Now'][index]
+          ['Join the Waitlist', 'Learn more', 'Join the Waitlist'][index] :
+          ['Start Editing', 'Learn more', 'Join Now'][index]
       }
 };
