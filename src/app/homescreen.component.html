@@ -2,8 +2,6 @@
   <mat-sidenav #sidenav mode="over" [(opened)]="navOpen" class="show-on-mobile main-sidenav">
     <a routerLink="/business" (click)="sidenav.close()"><div class="sidenav-item">For Businesses</div></a>
     <a routerLink="/editor" (click)="sidenav.close()"><div class="sidenav-item">For Podcast Editors</div></a>
-    <a routerLink="#" (click)="sidenav.close()"><div class="sidenav-item">About</div></a>
-    <a routerLink="#" (click)="sidenav.close()"><div class="sidenav-item">How it works</div></a>
   </mat-sidenav>
 
   <mat-sidenav-content>
@@ -18,8 +16,6 @@
         <div>
           <a routerLink="/business"><button mat-button>For Businesses</button></a>
           <a routerLink="/editor"><button mat-button>For Podcast Editors</button></a>
-          <a routerLink="#"><button mat-button>About</button></a>
-          <a routerLink="#"><button mat-button>How it works</button></a>
         </div>
       </div>
     </div>
