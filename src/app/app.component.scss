@@ -326,3 +326,19 @@ h2 {
         }
     }
 }
+
+.homepage-footer {
+    background: #F6F8F9;
+    display: flex;
+    padding: 24px;
+    color: #919EAB;
+    font-size: 15px;
+    font-weight: 200;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .footer-line {
+        margin: 6px 0;
+    }
+}
