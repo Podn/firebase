@@ -30,7 +30,6 @@ export class HomescreenComponent {
         }
       });
       route.data.subscribe(data => {
-        console.log(data);
         if ((data['type'] || '').toLowerCase() !== 'editor') {
           this.pageCategory = 'business';
         } else {
