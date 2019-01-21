@@ -1,0 +1,23 @@
+
+<svg width="87px" height="54px" viewBox="0 0 87 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="LP-businesses" transform="translate(-31.000000, -25.000000)">
+            <g id="navbar-home">
+                <g id="Group-28" transform="translate(31.000000, 25.000000)">
+                    <g id="Group-17" transform="translate(15.500000, 27.000000) rotate(-90.000000) translate(-15.500000, -27.000000) translate(-11.500000, 11.500000)" fill="#6A67CE">
+                        <g id="Group-18">
+                            <g id="Group-2" transform="translate(15.000000, 0.000000)">
+                                <polygon id="Triangle-2" points="24.96 0 39 31 10.92 31"></polygon>
+                                <polygon id="Triangle-3" points="11.31 7.75 22.62 31 0 31"></polygon>
+                            </g>
+                            <polygon id="Triangle-2" points="14 0 28 31 0 31"></polygon>
+                        </g>
+                    </g>
+                    <text id="Peak" font-family="HelveticaNeue-Thin, Helvetica Neue" font-size="24" font-weight="300" fill="#000000">
+                        <tspan x="37" y="34">Peak</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

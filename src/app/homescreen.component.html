@@ -29,12 +29,12 @@
         <div class="value-prop-section">
             <h2 class="title">{{valuePropTitle}}</h2>
             <div class="horizontal-divider"></div>
-            <div class="value-prop-section-container">            
+            <div class="value-prop-section-container">
                 <div *ngFor="let prop of valueProps" class="value-prop-line-item">
                     <div class="icon-container"><i class="fas fa-{{prop.icon}}"></i></div>
                     <div class="value-prop-text"><h3>{{prop.title}}</h3><div>{{prop.description}}</div></div>
                 </div>
-                
+
             </div>
         </div>
         <div class="cta-section" [class.gray-background]="isBusiness">
