@@ -36,11 +36,7 @@ export class HomescreenComponent {
         } else {
           this.pageCategory = 'editor';
         }
-        if ((data['page'] || '').toLowerCase() === 'waitlist') {
-          this.pageType = 'waitlist';
-        } else {
-          this.pageType = 'home';
-        }
+        this.pageType = (data['page'] || 'home').toLowerCase();
       });
     }
 
@@ -109,5 +105,10 @@ export class HomescreenComponent {
           return this.isBusiness     ?
           ['Join the Waitlist', 'Learn more', 'Join the Waitlist'][index] :
           ['Start Editing', 'Learn more', 'Join Now'][index]
+      }
+
+      pricing(value) {
+        // Store value somehow for waitlist dialog
+        this.openWaitlistDialog();
       }
 };

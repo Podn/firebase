@@ -2,6 +2,7 @@
   <mat-sidenav #sidenav mode="over" [(opened)]="navOpen" class="show-on-mobile main-sidenav">
     <a routerLink="/business" (click)="sidenav.close()"><div class="sidenav-item">For Businesses</div></a>
     <a routerLink="/editor" (click)="sidenav.close()"><div class="sidenav-item">For Podcast Editors</div></a>
+    <a routerLink="/business/pricing" (click)="sidenav.close()"><div class="sidenav-item">Pricing</div></a>
   </mat-sidenav>
 
   <mat-sidenav-content>
@@ -16,11 +17,12 @@
         <div>
           <a routerLink="/business"><button mat-button>For Businesses</button></a>
           <a routerLink="/editor"><button mat-button>For Podcast Editors</button></a>
+          <a routerLink="/business/pricing" (click)="sidenav.close()"><button mat-button>Pricing</button></a>
         </div>
       </div>
     </div>
-    <waitlist-form *ngIf="!isHomepage" [isBusiness]="isBusiness"></waitlist-form>
-    <ng-container *ngIf="isHomepage">
+    <waitlist-form *ngIf="pageType === 'waitlist'" [isBusiness]="isBusiness"></waitlist-form>
+    <ng-container *ngIf="pageType === 'home'">
         <div class="hero-section">
             <h1 class="headline">{{heroText}}</h1>
             <h2 class="title">{{heroSecondary}}</h2>
@@ -62,5 +64,55 @@
             </div>
         </div>
         </ng-container>
+        <div *ngIf="pageType === 'pricing'">
+            <div class="pricing">
+                <h2>Get the power, support and control you need to create and manage your team's podcast</h2>
+                <div class="pricing-container">
+                    <div class="pricing-col-container">
+                        <div class="pricing-column">
+                            <div class="pricing-column-header">
+                                <div class="price-title">Basic</div>
+                                <p class="price-desc">For teams that need to get their recorded podcast out the door</p>
+                                <p class="price">$275</p>
+                                <button mat-raised-button class="cta-button" (click)="pricing('basic')">Get Started</button>
+                            </div>
+                            <div class="pricing-column-footer">
+                                <div class="price-desc">Get your podcast sounding great</div>
+                                <div class="pricing-item" *ngFor="let text of ['Remove ahs and ums', 'Reduce background noise', 'Master to appropriate volume', 'Add supplied intro/outro', 'Add supplied music']"><mat-icon>check</mat-icon>{{text}}</div>
+                            </div>
+                        </div>
+                        <div class="pricing-column">
+                            <div class="pricing-column-header">
+                                <div class="price-title">Basic</div>
+                                <p class="price-desc">For teams that need to get their recorded podcast out the door</p>
+                                <p class="price">$275</p>
+                                <button mat-raised-button class="cta-button" (click)="pricing('basic')">Get Started</button>
+                            </div>
+                            <div class="pricing-column-footer">
+                                <div class="price-desc">Get your podcast sounding great</div>
+                                <div class="pricing-item" *ngFor="let text of ['Remove ahs and ums', 'Reduce background noise', 'Master to appropriate volume', 'Add supplied intro/outro', 'Add supplied music']"><mat-icon>check</mat-icon>{{text}}</div>
+                            </div>
+                        </div>
+                        <div class="pricing-column">
+                            <div class="pricing-column-header">
+                                <div class="price-title">Basic</div>
+                                <p class="price-desc">For teams that need to get their recorded podcast out the door</p>
+                                <p class="price">$275</p>
+                                <button mat-raised-button class="cta-button" (click)="pricing('basic')">Get Started</button>
+                            </div>
+                            <div class="pricing-column-footer">
+                                <div class="price-desc">Get your podcast sounding great</div>
+                                <div class="pricing-item" *ngFor="let text of ['Remove ahs and ums', 'Reduce background noise', 'Master to appropriate volume', 'Add supplied intro/outro', 'Add supplied music']"><mat-icon>check</mat-icon>{{text}}</div>
+                            </div>
+                        </div>
+                    </div>
+                <p>* Pricing is billed monthly per episode for up to an hour of unedited content</p>
+                </div>
+            </div>
+            <div class="pricing-footer">
+                 <h2 class="title">Sound good?</h2>
+                <button mat-raised-button class="cta-button" (click)="openWaitlistDialog()">Join the Waitlist</button>
+            </div>
+        </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

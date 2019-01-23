@@ -327,6 +327,68 @@ h2 {
     }
 }
 
+.pricing {
+    margin: 96px 24px 24px;
+    text-align: center;
+
+    .pricing-col-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .pricing-column:nth-child(even) {
+        background-color: #EDF8FE;
+    }
+
+    .pricing-column {
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .pricing-column-header {
+            margin: 24px 0 12px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid rgba(0,0,0,0.24);
+
+
+
+            .price-title,
+            .price {
+                font-size: 24px;
+                font-weight: 400;
+            }
+        }
+
+        .price-desc {
+            font-size: 18px;
+            font-weight: 200;
+            margin: 6px 24px;
+        }
+
+        .pricing-item {
+            text-align: left;
+            display: flex;
+            align-items: center;
+            margin: 6px 24px;
+            font-weight: 200;
+
+            .mat-icon {
+                color: green;
+                margin-right: 12px;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.pricing-footer {
+    background: #F6F8F9;
+    text-align: center;
+    padding: 24px
+}
+
+
 .homepage-footer {
     background: #F6F8F9;
     display: flex;
