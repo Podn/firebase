@@ -10,7 +10,7 @@
     <div class="navigation-header">
       <div class="show-on-mobile inline">
           <button mat-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
-        <logo [width]="100" [height]="40"></logo>
+        <logo [width]="100" [height]="50"></logo>
       </div>
       <div class="banner-bar hide-on-mobile">
         <logo [width]="125" [height]="60"></logo>
@@ -78,31 +78,31 @@
                             </div>
                             <div class="pricing-column-footer">
                                 <div class="price-desc">Get your podcast sounding great</div>
-                                <div class="pricing-item" *ngFor="let text of ['Remove ahs and ums', 'Reduce background noise', 'Master to appropriate volume', 'Add supplied intro/outro', 'Add supplied music']"><mat-icon>check</mat-icon>{{text}}</div>
+                                <div class="pricing-item" *ngFor="let text of ['Remove ahs and ums', 'Reduce background noise', 'Master to appropriate volume', 'Add supplied intro/outro']"><mat-icon>check</mat-icon>{{text}}</div>
                             </div>
                         </div>
                         <div class="pricing-column">
                             <div class="pricing-column-header">
-                                <div class="price-title">Basic</div>
-                                <p class="price-desc">For teams that need to get their recorded podcast out the door</p>
-                                <p class="price">$275</p>
+                                <div class="price-title">Premium</div>
+                                <p class="price-desc">For teams that need their podcast fully managed</p>
+                                <p class="price">$385</p>
                                 <button mat-raised-button class="cta-button" (click)="pricing('basic')">Get Started</button>
                             </div>
                             <div class="pricing-column-footer">
-                                <div class="price-desc">Get your podcast sounding great</div>
-                                <div class="pricing-item" *ngFor="let text of ['Remove ahs and ums', 'Reduce background noise', 'Master to appropriate volume', 'Add supplied intro/outro', 'Add supplied music']"><mat-icon>check</mat-icon>{{text}}</div>
+                                <div class="price-desc">Everything in basic plus</div>
+                                <div class="pricing-item" *ngFor="let text of ['Edit based on a supplied transcript', 'Full audio transcript with timestamps', 'Optimize discoverability with ID3 tagging', 'Add supplied music or sponsored content']"><mat-icon>check</mat-icon>{{text}}</div>
                             </div>
                         </div>
                         <div class="pricing-column">
                             <div class="pricing-column-header">
-                                <div class="price-title">Basic</div>
-                                <p class="price-desc">For teams that need to get their recorded podcast out the door</p>
-                                <p class="price">$275</p>
+                                <div class="price-title">Enterprise</div>
+                                <p class="price-desc">For teams that need to create a new podcast</p>
+                                <p class="price">&nbsp;<!--spacing--></p>
                                 <button mat-raised-button class="cta-button" (click)="pricing('basic')">Get Started</button>
                             </div>
                             <div class="pricing-column-footer">
-                                <div class="price-desc">Get your podcast sounding great</div>
-                                <div class="pricing-item" *ngFor="let text of ['Remove ahs and ums', 'Reduce background noise', 'Master to appropriate volume', 'Add supplied intro/outro', 'Add supplied music']"><mat-icon>check</mat-icon>{{text}}</div>
+                                <div class="price-desc">Everything in premium plus</div>
+                                <div class="pricing-item" *ngFor="let text of ['Podcast website', 'Hosting and Distribution', 'Custom logo art', 'Custom intro/outro music', 'Per episode show notes', 'Performance statistics']"><mat-icon>check</mat-icon>{{text}}</div>
                             </div>
                         </div>
                     </div>
