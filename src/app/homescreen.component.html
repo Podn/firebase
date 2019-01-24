@@ -10,10 +10,10 @@
     <div class="navigation-header">
       <div class="show-on-mobile inline">
           <button mat-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
-        <div class="peak-name">Peak Podcasting</div>
+        <logo [width]="100" [height]="40"></logo>
       </div>
       <div class="banner-bar hide-on-mobile">
-        <div class="peak-name">Peak Podcasting</div>
+        <logo [width]="125" [height]="60"></logo>
         <div>
           <a routerLink="/business"><button mat-button>For Businesses</button></a>
           <a routerLink="/editor"><button mat-button>For Podcast Editors</button></a>
@@ -110,8 +110,9 @@
                 </div>
             </div>
             <div class="pricing-footer">
-                 <h2 class="title">Sound good?</h2>
-                <button mat-raised-button class="cta-button" (click)="openWaitlistDialog()">Join the Waitlist</button>
+                <h1 class="headline">The easiest way to create a podcast for your business</h1>
+                <h2 class="title">Focus on making great content</h2>
+                <button mat-raised-button class="cta-button" (click)="openWaitlistDialog()">{{cta(2)}}</button>
             </div>
         </div>
   </mat-sidenav-content>

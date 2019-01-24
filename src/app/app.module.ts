@@ -19,7 +19,7 @@ import { AboutComponent } from './about.component'
 import { AppComponent } from './app.component';
 import { HomescreenComponent } from './homescreen.component';
 import { HowItWorksComponent } from './how-it-works.component';
-import { PricingComponent } from './pricing.component';
+import { LogoComponent } from './logo.component';
 import { WaitlistFormComponent } from './waitlist-form.component';
 import { WaitlistFormDialogComponent } from './waitlist-form-dialog.component';
 
@@ -29,7 +29,7 @@ import { WaitlistFormDialogComponent } from './waitlist-form-dialog.component';
     AboutComponent,
     HomescreenComponent,
     HowItWorksComponent,
-    PricingComponent,
+    LogoComponent,
     WaitlistFormComponent,
     WaitlistFormDialogComponent,
   ],
