@@ -183,6 +183,11 @@ a {
 .cta-section {
     padding: 48px 32px;
     text-align: center;
+
+    @media screen and (max-width: 720px) {
+        padding: 0 32px 48px;
+        border-top: 2px solid rgba(0,0,0,0.24);
+    }
 }
 
 .how-it-works-container {
@@ -386,6 +391,45 @@ a {
                 margin-right: 12px;
                 font-weight: bold;
             }
+        }
+    }
+}
+
+.video-section {
+    
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    text-align: left;
+
+    @media screen and (min-width: 720px) {  
+        margin: 48px;
+
+        .video-text {
+            margin-right: 48px;
+        }
+    }
+
+    .video-text {
+        max-width: 500px;
+        font-weight: 200;
+
+        h2 {
+            font-size: 32px;
+        }
+
+    }
+
+    @media screen and (max-width: 719px) {
+        flex-flow: column;
+        align-items: center;
+
+        .video-text {
+            margin-bottom: 48px;
+        }
+
+        iframe {
+            width: 100%;
         }
     }
 }

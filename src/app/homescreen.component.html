@@ -40,13 +40,17 @@
             </div>
         </div>
         <div class="cta-section" [class.gray-background]="isBusiness">
-            <div *ngIf="isBusiness">
-                <how-it-works></how-it-works>
+            <div *ngIf="isBusiness" class="video-section">
+                <div class="video-text">
+                    <h2>Get to know how Peak works</h2>
+                    <div>See how your business can make podcast editing, hosting and distribution trivial</div>
+                </div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/qs5MejbVrBE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div *ngIf="!isBusiness">
                 <h1>The easiest way to become a full time podcast editor</h1>
             </div>
-            <button mat-raised-button class="cta-button" (click)="openWaitlistDialog()">{{cta(1)}}</button>
+            <button *ngIf="!isBusiness" mat-raised-button class="cta-button" (click)="openWaitlistDialog()">{{cta(1)}}</button>
         </div>
         <div class="cta-section" *ngIf="isBusiness">
             <h1 class="headline">The easiest way to create a podcast for your business</h1>
@@ -98,7 +102,7 @@
                                 <div class="price-title">Enterprise</div>
                                 <p class="price-desc">For teams that need to create a new podcast</p>
                                 <p class="price">&nbsp;<!--spacing--></p>
-                                <button mat-raised-button class="cta-button" (click)="pricing('basic')">Get Started</button>
+                                <button mat-raised-button class="cta-button" (click)="pricing('basic')">Contact us</button>
                             </div>
                             <div class="pricing-column-footer">
                                 <div class="price-desc">Everything in premium plus</div>
