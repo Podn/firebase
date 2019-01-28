@@ -4,7 +4,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'waitlist-form-dialog',
-  template: `<waitlist-form [isBusiness]="data.isBusiness"></waitlist-form>`,
+  template: `<waitlist-form [isBusiness]="data.isBusiness" [package]="data.package"></waitlist-form>`,
   styleUrls: ['./app.component.scss']
 })
 export class WaitlistFormDialogComponent {

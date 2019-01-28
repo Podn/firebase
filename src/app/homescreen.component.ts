@@ -88,15 +88,23 @@ export class HomescreenComponent {
                ]
        }
 
+       get package() {
+        if (!this.isBusiness || this.pageType !== 'waitlist') return '';
+        return this.route.snapshot.queryParamMap.get('package') || '';
+       }
 
-      openWaitlistDialog() {
+      openWaitlistDialog(opt_pacakge: string|undefined) {
         if (this.isMobile) {
-          this.router.navigate([`/${this.isBusiness ? 'business' : 'editor'}/${this.isBusiness ? 'waitlist' : 'apply'}`]);
+          this.router.navigate([`/${this.isBusiness ? 'business' : 'editor'}/${this.isBusiness ? 'waitlist' : 'apply'}`], { queryParams: {package: opt_pacakge || ''} });
         } else {
+          const data = { isBusiness: this.isBusiness };
+          if (opt_pacakge) {
+            data['package'] = opt_pacakge;
+          }
           this.dialog.open(WaitlistFormDialogComponent, {
             width: '80%',
             maxWidth: '500px',
-            data: { isBusiness: this.isBusiness }
+            data,
           });
         }
       }
@@ -108,7 +116,6 @@ export class HomescreenComponent {
       }
 
       pricing(value) {
-        // Store value somehow for waitlist dialog
-        this.openWaitlistDialog();
+        this.openWaitlistDialog(value);
       }
 };

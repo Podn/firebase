@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
   firebase : {
-    apiKey: "AIzaSyC3pDrkVxSrCfu56SAG6ShvklfUF3mYaGc",
-    authDomain: "peakpodcasting.firebaseapp.com",
-    databaseURL: "https://peakpodcasting.firebaseio.com",
-    projectId: "peakpodcasting",
-    storageBucket: "peakpodcasting.appspot.com",
-    messagingSenderId: "653244052966"
+    apiKey: "AIzaSyB7jdshD5JNsaKZewgNIfSuberlGCOlv2Q",
+    authDomain: "peakpodcastingstaging.firebaseapp.com",
+    databaseURL: "https://peakpodcastingstaging.firebaseio.com",
+    projectId: "peakpodcastingstaging",
+    storageBucket: "peakpodcastingstaging.appspot.com",
+    messagingSenderId: "967793528624"
   },
 };
 

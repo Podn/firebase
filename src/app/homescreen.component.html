@@ -19,7 +19,7 @@
         </div>
       </div>
     </div>
-    <waitlist-form *ngIf="pageType === 'waitlist'" [isBusiness]="isBusiness"></waitlist-form>
+    <waitlist-form *ngIf="pageType === 'waitlist'" [isBusiness]="isBusiness" [package]="package"></waitlist-form>
     <ng-container *ngIf="pageType === 'home'">
         <div class="hero-section">
             <h1 class="headline">{{heroText}}</h1>
@@ -88,7 +88,7 @@
                                 <div class="price-title">Premium</div>
                                 <p class="price-desc">For teams that need their podcast fully managed</p>
                                 <p class="price">$385</p>
-                                <button mat-raised-button class="cta-button" (click)="pricing('basic')">Get Started</button>
+                                <button mat-raised-button class="cta-button" (click)="pricing('premium')">Get Started</button>
                             </div>
                             <div class="pricing-column-footer">
                                 <div class="price-desc">Everything in basic plus</div>
@@ -100,7 +100,7 @@
                                 <div class="price-title">Enterprise</div>
                                 <p class="price-desc">For teams that need to create a new podcast</p>
                                 <p class="price">&nbsp;<!--spacing--></p>
-                                <button mat-raised-button class="cta-button" (click)="pricing('basic')">Contact us</button>
+                                <button mat-raised-button class="cta-button" (click)="pricing('enterprise')">Contact us</button>
                             </div>
                             <div class="pricing-column-footer">
                                 <div class="price-desc">Everything in premium plus</div>

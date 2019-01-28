@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 
+import { environment } from '../environments/environment';
+
 @Component({
   selector: 'waitlist-form',
   templateUrl: './waitlist-form.component.html',
@@ -8,6 +10,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class WaitlistFormComponent {
     @Input() isBusiness: boolean = true;
+    @Input() package: string = '';
 
     email: string = '';
     name: string = '';
@@ -31,15 +34,13 @@ export class WaitlistFormComponent {
     }
 
     get postData() {
-        if (this.isBusiness) {
-            return {
+        const data = this.isBusiness ?
+             {
                 'email': this.email,
                 'name:': this.name,
                 'company': this.company,
                 'user_type': 'business',
-            };
-        }
-        return {
+            } : {
                 'email': this.email,
                 'name:': this.name,
                 'editingType': this.editingType,
@@ -47,6 +48,8 @@ export class WaitlistFormComponent {
                 'previousWorkLink': this.previousWorkLink,
                 'user_type': 'editor',
             };
+        if (this.package) data['package'] = this.package;
+        return data;
     }
 
   submit(): void {
