@@ -1,7 +1,6 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav mode="over" [(opened)]="navOpen" class="show-on-mobile main-sidenav">
-    <a routerLink="/business" (click)="sidenav.close()"><div class="sidenav-item">For Businesses</div></a>
-    <a routerLink="/editor" (click)="sidenav.close()"><div class="sidenav-item">For Podcast Editors</div></a>
+    <a routerLink="/business" (click)="sidenav.close()"><div class="sidenav-item">Home</div></a>
     <a routerLink="/business/pricing" (click)="sidenav.close()"><div class="sidenav-item">Pricing</div></a>
   </mat-sidenav>
 
@@ -15,8 +14,7 @@
       <div class="banner-bar hide-on-mobile">
         <logo [width]="125" [height]="60"></logo>
         <div class="link-container">
-          <a routerLink="/business"><button mat-button>For Businesses</button></a>
-          <a routerLink="/editor"><button mat-button>For Podcast Editors</button></a>
+          <a routerLink="/business"><button mat-button>Home</button></a>
           <a routerLink="/business/pricing" (click)="sidenav.close()"><button mat-button>Pricing</button></a>
         </div>
       </div>
