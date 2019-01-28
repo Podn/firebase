@@ -42,7 +42,7 @@ export class WaitlistFormComponent {
                 'user_type': 'business',
             } : {
                 'email': this.email,
-                'name:': this.name,
+                'name': this.name,
                 'editingType': this.editingType,
                 'project': this.project,
                 'previousWorkLink': this.previousWorkLink,
