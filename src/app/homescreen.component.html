@@ -20,6 +20,7 @@
       </div>
     </div>
     <waitlist-form *ngIf="pageType === 'waitlist'" [isBusiness]="isBusiness" [package]="package"></waitlist-form>
+    <how-it-works *ngIf="pageType === 'how-it-works'"></how-it-works>
     <ng-container *ngIf="pageType === 'home'">
         <div class="hero-section">
             <h1 class="headline">{{heroText}}</h1>
