@@ -38,19 +38,6 @@
 
             </div>
         </div>
-        <div class="cta-section" [class.gray-background]="isBusiness">
-            <div *ngIf="isBusiness" class="video-section">
-                <div class="video-text">
-                    <h2>Get to know how Peak works</h2>
-                    <div>See how your business can make podcast editing, hosting and distribution trivial</div>
-                </div>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/qs5MejbVrBE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div *ngIf="!isBusiness">
-                <h1>The easiest way to become a full time podcast editor</h1>
-            </div>
-            <button *ngIf="!isBusiness" mat-raised-button class="cta-button" (click)="openWaitlistDialog()">{{cta(1)}}</button>
-        </div>
         <div class="cta-section" *ngIf="isBusiness">
             <h1 class="headline">The easiest way to create a podcast for your business</h1>
             <h2 class="title">Focus on making great content</h2>
