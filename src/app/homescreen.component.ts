@@ -59,13 +59,13 @@ export class HomescreenComponent {
 
       get heroText() {
           return this.isBusiness ?
-          'The easiest way to create a podcast for your business' :
+          'Speak directly to your future customers' :
           'Focus on editing and join a community of audio editors'
       }
 
       get heroSecondary() {
           return this.isBusiness ?
-          'Never worry about editing or distributing again' :
+          'Create a podcast and get heard by the right people at the right time' :
           'Focus on editing and join a community of audio professionals'
       }
 
@@ -111,7 +111,7 @@ export class HomescreenComponent {
 
      cta(index) {
           return this.isBusiness     ?
-          ['Join the Waitlist', 'Learn more', 'Join the Waitlist'][index] :
+          ['Talk to us', 'Learn more', 'Talk to us'][index] :
           ['Start Editing', 'Learn more', 'Join Now'][index]
       }
 

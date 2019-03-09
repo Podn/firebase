@@ -1,6 +1,5 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav mode="over" [(opened)]="navOpen" class="show-on-mobile main-sidenav">
-    <a routerLink="/business" (click)="sidenav.close()"><div class="sidenav-item">Home</div></a>
     <a routerLink="/business/pricing" (click)="sidenav.close()"><div class="sidenav-item">Pricing</div></a>
     <a routerLink="/business/how-it-works" (click)="sidenav.close()"><div class="sidenav-item">How it Works</div></a>
   </mat-sidenav>
@@ -10,12 +9,11 @@
     <div class="navigation-header">
       <div class="show-on-mobile inline">
           <button mat-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
-        <logo [width]="100" [height]="50"></logo>
+       <a routerLink="/business"> <logo [width]="100" [height]="50"></logo></a>
       </div>
       <div class="banner-bar hide-on-mobile">
-        <logo [width]="125" [height]="60"></logo>
+       <a routerLink="/business"> <logo [width]="125" [height]="60"></logo></a>
         <div class="link-container">
-          <a routerLink="/business"><button mat-button>Home</button></a>
           <a routerLink="/business/pricing" (click)="sidenav.close()"><button mat-button>Pricing</button></a>
           <a routerLink="/business/how-it-works" (click)="sidenav.close()"><button mat-button>How it Works</button></a>
         </div>
@@ -41,8 +39,8 @@
             </div>
         </div>
         <div class="cta-section" *ngIf="isBusiness">
-            <h1 class="headline">The easiest way to create a podcast for your business</h1>
-            <h2 class="title">Focus on making great content</h2>
+            <h1 class="headline">Make a podcast people love</h1>
+            <h2 class="title">Build brand awareness. Be human.</h2>
             <button mat-raised-button class="cta-button" (click)="openWaitlistDialog()">{{cta(2)}}</button>
         </div>
         <div class="homepage-footer">
@@ -58,7 +56,8 @@
         </ng-container>
         <div *ngIf="pageType === 'pricing'">
             <div class="pricing">
-                <h2>Get the power, support and control you need to create and manage your team's podcast</h2>
+                <h1>Pricing</h1>
+                <h2 class="title">Get the power, support and control you need to create and manage your team's podcast</h2>
                 <div class="pricing-container">
                     <div class="pricing-col-container">
                         <div class="pricing-column">
@@ -102,8 +101,8 @@
                 </div>
             </div>
             <div class="pricing-footer">
-                <h1 class="headline">The easiest way to create a podcast for your business</h1>
-                <h2 class="title">Focus on making great content</h2>
+                <h1 class="headline">Be a thought leader in your industry</h1>
+                <h2 class="title">Connect directly to your customers</h2>
                 <button mat-raised-button class="cta-button" (click)="openWaitlistDialog()">{{cta(2)}}</button>
             </div>
         </div>
