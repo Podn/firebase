@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class HowItWorksComponent {
-    private currentDisplayed: string = '';
+    private currentDisplayed: string = 'enterprise';
 
     show(name: string) {
         this.currentDisplayed = name;
@@ -39,7 +39,7 @@ export class HowItWorksComponent {
                 },
             ];
 
-            
+
         }
         if (this.currentDisplayed === 'enterprise') {
             return [
@@ -71,7 +71,7 @@ export class HowItWorksComponent {
                         'Recieve podcast statistics',
                     ],
                 },
-            ];    
+            ];
         }
         return [];
     }
