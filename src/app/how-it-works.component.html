@@ -3,9 +3,9 @@
         <h1>How it works</h1>
         <h3>Select a tier to see how we can help</h3>
         <div class="section-headers">
-            <div class="basic name" (click)="show('basic')">basic</div>
-            <div class="premium name" (click)="show('premium')">premium</div>
-            <div class="enterprise name" (click)="show('enterprise')">enterprise</div>
+            <div class="basic name" [ngClass]="{'active': basicSelected == 1}" (click)="show('basic')">basic</div>
+            <div class="premium name" [ngClass]="{'active': premiumSelected == 1}" (click)="show('premium')">premium</div>
+            <div class="enterprise name" [ngClass]="{'active': enterpriseSelected == 1}" (click)="show('enterprise')">enterprise</div>
         </div>
         <ng-container *ngFor="let section of sectionList">
             <h2>{{section.title}}</h2>
@@ -19,3 +19,4 @@
         </ng-container>
     </div>
 </div>
+

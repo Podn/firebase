@@ -204,12 +204,10 @@ a {
         }
 
         .premium {
-            background-color: rgba(0, 200, 0, 0.24);
             padding: 12px 0;
         }
 
         .enterprise {
-            background-color: rgba(0, 150, 200, 0.24);
             padding: 12px 0;
         }
 
@@ -268,6 +266,10 @@ a {
             cursor: pointer;
             padding: 6px;
             font-weight: 400;
+        }
+        .name.active {
+            background-color: #62B7ED !important;
+            color: white;
         }
     }
 }
@@ -394,13 +396,13 @@ a {
 }
 
 .video-section {
-    
+
     display: flex;
     align-items: center;
     font-size: 20px;
     text-align: left;
 
-    @media screen and (min-width: 720px) {  
+    @media screen and (min-width: 720px) {
         margin: 48px;
 
         .video-text {

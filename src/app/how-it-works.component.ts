@@ -6,11 +6,34 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class HowItWorksComponent {
+    basicSelected: boolean = false;
+    premiumSelected: boolean = false;
+    enterpriseSelected: boolean = true;
     private currentDisplayed: string = 'enterprise';
+
+    setActive() {
+        if (this.currentDisplayed  == 'basic' && this.basicSelected != true) {
+            this.basicSelected = !this.basicSelected;
+            this.premiumSelected = false;
+            this.enterpriseSelected = false;
+        }
+        if(this.currentDisplayed  === 'premium' && this.premiumSelected != true) {
+            this.premiumSelected = !this.premiumSelected;
+            this.basicSelected = false;
+            this.enterpriseSelected = false;
+        }
+        if(this.currentDisplayed  === 'enterprise' && this.enterpriseSelected != true) {
+            this.enterpriseSelected = !this.enterpriseSelected;
+            this.basicSelected = false;
+            this.premiumSelected = false;
+        }
+    }
 
     show(name: string) {
         this.currentDisplayed = name;
+        this.setActive();
     }
+
 
     get sectionList() {
         if (this.currentDisplayed === 'basic') {
